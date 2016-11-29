@@ -8,3 +8,5 @@ var options = {
 };
 
 renderMathInElement(document.body, options);
+
+browser.runtime.sendMessage({});

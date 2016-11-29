@@ -7,16 +7,28 @@
   "description": "Add LaTeX Math Equation support to GitHub.",
 
   "icons": {
-    "48": "katexify.svg"
+    "48": "icons/KaTeX.svg"
   },
+
+//  "permissions": [
+//    "activeTab",
+//    "tabs"
+//  ],
 
   "content_scripts": [
     {
       "matches": ["*://github.com/*"],
-      "js": ["katex.min.js", "contrib/auto-render.min.js", "katexify.js"],
+      "js": ["katex.min.js", "contrib/auto-render.min.js", "content.js"],
       "css":["katex.min.css"]
     }
   ],
-  "web_accessible_resources": ["fonts/*.woff2", "fonts/*.woff", "fonts/*.eot", "fonts/*.ttf"]
+  "web_accessible_resources": ["fonts/*.woff2", "fonts/*.woff", "fonts/*.eot", "fonts/*.ttf"],
 
+  "page_action": {
+    "default_icon": "icons/TeX.svg"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
