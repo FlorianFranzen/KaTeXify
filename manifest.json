@@ -1,0 +1,22 @@
+{
+
+  "manifest_version": 2,
+  "name": "KaTeXify",
+  "version": "1.0",
+
+  "description": "Add LaTeX Math Equation support to GitHub.",
+
+  "icons": {
+    "48": "katexify.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["katex.min.js", "contrib/auto-render.min.js", "katexify.js"],
+      "css":["katex.min.css"]
+    }
+  ],
+  "web_accessible_resources": ["fonts/*.woff2", "fonts/*.woff", "fonts/*.eot", "fonts/*.ttf"]
+
+}
